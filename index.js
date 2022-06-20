@@ -1,7 +1,6 @@
 import './index.css';
 
 let isDeleteMessage = false;
-console.log(isDeleteMessage);
 
 const cookieMessageHTML = document.querySelector('.cookie-consent');
 
@@ -11,19 +10,18 @@ consentButton.addEventListener('click', (event) => {
     if(target) {
         cookieMessageHTML.remove();
         isDeleteMessage = true;
-        console.log(isDeleteMessage);
-        localStorage.setItem('isDeleteMessage' , true)
+        localStorage.setItem('isDeleteMessage' , true);
     };
 });
+
 if(localStorage.getItem('isDeleteMessage' , true)){
     cookieMessageHTML.remove();
-}
+};
 
 document.addEventListener('keydown', (event) => {
   
     const { key } = event;
-    console.log(key);
     if(key === 'Tab'){
-        localStorage.clear()
+        localStorage.clear();
     };
 });
